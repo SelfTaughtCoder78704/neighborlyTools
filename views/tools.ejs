@@ -1,0 +1,33 @@
+<br>
+<br>
+<br>
+<br>
+<div id="indiTool">
+   <h1>Make changes now:</h1>
+    <div id="changeTool">
+        <form action="/profile/tools/<%= tools._id %>" method="POST" id="changeTForm">
+            <label for="id">ID: </label>
+            <input type="text" name="id" value="<%= tools.id%>" readonly><br>
+            <label for="category">Category: </label>
+            <input type="text" name="category" id="cat" value="<%= tools.category %>">
+            <br>
+            <label for="description">Description: </label>
+            <input type="text" name="description" id="des" value="<%= tools.description %>" >
+            <br>
+            <label for="price">Price: </label>
+            <input type="text" name="price" value="<%= tools.price %>">
+            <br>
+            <label for="contactInfo">Contact: </label>
+            <input type="text" name="contactInfo" value="<%= tools.contactInfo %>">
+            <br>
+            <input type="submit">
+        </form>
+        <form action="/profile/tools/<%= tools._id %>/delete" method="POST" id="changeTForm">
+            <h3>Delete This Tool</h3>
+
+            <input type="submit">
+        </form>
+    </div>
+</div>
+
+

@@ -1,0 +1,16 @@
+<br>
+<br>
+<br>
+<br>
+
+<h1 id="ourT">Our Tools</h1>
+<ul class="tool">
+    <% for(var i=0; i < tool.length; i++) {%>
+      <li class="tool">
+        <span class="span1">Category: <%= tool[i].category %></span><br>
+        <span class="span2">Description: <%= tool[i].description %></span><br>
+        <span>Price: <%= tool[i].price %></span><br>
+        <span class="span1">Contact: <%= tool[i].contactInfo %></span><br>
+      </li>
+    <% } %>
+  </ul>

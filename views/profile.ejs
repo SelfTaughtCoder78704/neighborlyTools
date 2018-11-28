@@ -1,0 +1,57 @@
+<br>
+<br>
+<br>
+<div id="pro">
+    <div id="mainPro">
+    <h2>Welcome to your profile, <%= user.username.toUpperCase()%>.</h2>
+    <img src='<%= user.thumbnail %>' alt="">
+    <h3>YOUR INFO:</h3>
+    <p>Email Address: <%= user.email %></p>
+    <p>First Name: <%= user.firstname %></p>
+    <p>Last Name: <%= user.lastname %></p>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <div class="g-person" data-href="https://plus.google.com/<%= user.googleId %>" style="width: 10%"></div>
+</div>
+    <div id="toolFormDiv">
+        <h3> Want to submit a tool for rent?</h3>
+     <form action="/tool" id="theForm" method="POST">
+         <label for="category">Select a Category:</label><br>
+         <select name="category" id="category">
+             <option value="powerTool">Power Tool</option>
+             <option value="handTool">Hand Tool</option>
+             <option value="trailer">Trailer</option>
+             <option value="generator">Generator</option>
+         </select> <br>
+         <label for="description">Describe your tool:</label><br>
+         <textarea name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea><br>
+         <label for="price">Name Your Price:</label><br>
+         <input type="text" name="price" id="price" placeholder="$5 a day"> <br>
+         <label for="contactInfo">Your Contact Info:</label><br>
+         <textarea name="contactInfo" id="contactInfo" cols="30" rows="10" placeholder="Name, Phone Number or Email..."></textarea><br>
+         <button type="submit">Submit</button>
+     </form>
+    </div>
+     <div id="yourTools">
+        <h3>Your Current Tools For Rent...</h3>
+        <ol class="toolP">
+            <% for(var i=0; i < tools.length; i++) {%>
+              <li class="toolP">
+                <span class="span1">Category: <%= tools[i].category %></span><br>
+                <span class="span2">Description: <%= tools[i].description %></span><br>
+                <span class="span3">Price: <%= tools[i].price %></span><br>
+              </li>
+            <% } %>
+          </ol><br><br>
+        <form action="/profile/tools" method="get" id='upform'>
+        <select name="id" id="opt">
+                <% for(var i=0; i < tools.length; i++) {%>
+            <option value='<%= tools[i].id %>'><%= tools[i].description %></option>
+            <% } %>
+        </select><br><br>
+        <button type="submit">Update</button>
+    </form>
+    </div>
+    
+</div>
+
+
