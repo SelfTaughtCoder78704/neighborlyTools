@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
 const keys = require('./config/keys');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
-
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -57,6 +57,6 @@ app.get('/', (req, res) => {
 
 
 
-app.listen(3000, () => {
-    console.log('listening on port 3000')
+app.listen(port, () => {
+    console.log(`Listening on ${port}`)
 });
